@@ -1,0 +1,116 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f0f2f5;
+}
+
+
+nav {
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: #1d4ed8; 
+  transform: scale(1.05);
+}
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+  margin: 16px auto;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-content-wrapper {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.card-button {
+  background: #2979ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card-button:hover {
+  background: #1565c0;
+}
+
+
+
+.first-page .card {
+  flex: 1 1 calc(25% - 20px);
+}
+
+.second-page .card {
+  flex: 1 1 calc(33.333% - 20px);
+}
+
+.third-page .card {
+  flex: 1 1 calc(20% - 20px);
+}
+
+
+@media (max-width: 1024px) {
+  .first-page .card, .second-page .card, .third-page .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
