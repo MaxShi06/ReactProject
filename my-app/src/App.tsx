@@ -1,18 +1,21 @@
-
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import First from "./pages/First";
-import Second from "./pages/Second";
-import Third from "./pages/Third";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Header from './components/Header';
+import Registration from './pages/Registraion';
+import Login from './pages/Login';
+import Bikes from './pages/First';
+import './App.css';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/first" element={<First />} />
-      <Route path="/second" element={<Second />} />
-      <Route path="/third" element={<Third />} />
-    </Routes>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/bikes" element={<Bikes />} />
+        <Route path="/" element={<Navigate to="/bikes" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
