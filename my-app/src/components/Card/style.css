@@ -22,6 +22,13 @@
   font-weight: 600;
 }
 
+.card-author {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+}
+
 .card-price {
   margin: 0;
   font-size: 1.5rem;

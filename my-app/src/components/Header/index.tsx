@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <h1 className="header-title">🚴 BikeShop</h1>
+        <h1 className="header-title">� BookShop</h1>
         <nav className="nav">
           {!currentUser ? (
             <>
@@ -24,7 +24,7 @@ export default function Header() {
           ) : (
             <>
               <span className="user-name">Welcome, {currentUser.name}</span>
-              <Link to="/bikes" className="nav-link">Bikes</Link>
+              <Link to="/books" className="nav-link">Books</Link>
               <button onClick={handleLogout} className="logout-btn">Logout</button>
             </>
           )}

@@ -23,7 +23,7 @@ export default function Login() {
     }
 
     if (loginUser(formData.email, formData.password)) {
-      navigate('/bikes');
+      navigate('/books');
     } else {
       setError('Invalid email or password');
     }

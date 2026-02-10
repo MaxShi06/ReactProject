@@ -1,15 +1,16 @@
-import type { Bike } from '../../types';
+import type { Book } from '../../types';
 import './style.css';
 
 interface CardProps {
-  bike: Bike;
+  book: Book;
 }
 
-export default function Card({ bike }: CardProps) {
+export default function Card({ book }: CardProps) {
   return (
     <div className="card">
-      <h3 className="card-title">{bike.name}</h3>
-      <p className="card-price">${bike.price}</p>
+      <h3 className="card-title">{book.title}</h3>
+      <p className="card-author">{book.author}</p>
+      <p className="card-price">${book.price}</p>
       <button className="card-btn">Add to Cart</button>
     </div>
   );

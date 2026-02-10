@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "Fiction", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 2, "name": "Fantasy", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 3, "name": "Science Fiction", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 4, "name": "Mystery", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 5, "name": "Horror", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 6, "name": "Biography", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" },
+    { "id": 7, "name": "History", "createdAt": "2025-08-20T08:00:00Z", "updatedAt": "2025-08-20T08:00:00Z" }
+]

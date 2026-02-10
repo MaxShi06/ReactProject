@@ -6,8 +6,9 @@ export interface User {
   token: string;
 }
 
-export interface Bike {
+export interface Book {
   id: number;
-  name: string;
+  title: string;
+  author: string;
   price: number;
 }
