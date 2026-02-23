@@ -1,57 +1,108 @@
 .card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(16, 37, 73, 0.14);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  animation: card-enter 420ms ease both;
+  backdrop-filter: blur(7px);
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(16, 37, 73, 0.2);
+  transform: translateY(-6px);
+}
+
+.card-cover-wrap {
+  position: relative;
+  height: 220px;
+}
+
+.card-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-type {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 0.3rem 0.66rem;
+  border-radius: 999px;
+  background: rgba(8, 18, 37, 0.78);
+  color: #f4f7ff;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card-content {
+  padding: 1rem 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .card-title {
   margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: #132145;
   font-weight: 600;
 }
 
 .card-author {
   margin: 0;
   font-size: 0.95rem;
-  color: #666;
+  color: #4f6188;
   font-style: italic;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .card-price {
   margin: 0;
-  font-size: 1.5rem;
-  color: #667eea;
-  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0e2149;
+  font-weight: 800;
 }
 
 .card-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(120deg, #ff7a18 0%, #ef4b4f 100%);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: transform 0.2s, filter 0.2s;
 }
 
 .card-btn:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+  filter: brightness(1.06);
+  transform: translateY(-1px);
 }
 
 .card-btn:active {
-  transform: scale(0.98);
+  transform: translateY(1px);
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

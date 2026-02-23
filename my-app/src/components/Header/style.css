@@ -1,8 +1,8 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(110deg, #0f2248 0%, #1b3f77 48%, #f06a2f 128%);
   color: white;
-  padding: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.9rem 0;
+  box-shadow: 0 8px 24px rgba(9, 22, 46, 0.25);
 }
 
 .header-content {
@@ -16,8 +16,9 @@
 
 .header-title {
   margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 .nav {
@@ -27,18 +28,36 @@
 }
 
 .nav-link {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s;
+  font-weight: 600;
+  transition: transform 0.24s, opacity 0.24s;
 }
 
 .nav-link:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .user-name {
   font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.nav-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-cart span {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.24);
+  font-size: 0.84rem;
 }
 
 .logout-btn {

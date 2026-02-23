@@ -4,7 +4,8 @@ import { isLoggedIn } from '../../servise/localStorageHelper';
 import type { Book } from '../../types';
 import authorsData from '../../fixtures/Authors.json';
 import booksData from '../../fixtures/Books.json';
-import Card from '../../components/Card';
+import categoriesData from '../../fixtures/Categories.json';
+import Card from '../../components/Card/index';
 import './style.css';
 
 export default function Books() {
@@ -12,11 +13,15 @@ export default function Books() {
 
   const mockBooks = useMemo(() => {
     const authorsMap = new Map(authorsData.map(a => [a.id, a.name]));
+    const categoriesMap = new Map(categoriesData.map((category) => [category.id, category.name]));
+
     return booksData.map(b => ({
       id: b.id,
       title: b.title,
       author: authorsMap.get(b.authorId) || 'Unknown',
+      type: categoriesMap.get(b.categoryId) || 'Other',
       price: b.discountPrice || b.price,
+      image: b.image,
     }));
   }, []);
 
@@ -28,10 +33,13 @@ export default function Books() {
 
   return (
     <div className="books-page">
-      <h2>Our Books</h2>
+      <section className="books-hero">
+        <p className="books-eyebrow">BookStore Collection</p>
+        <h2>Choose your next favorite story</h2>
+      </section>
       <div className="books-grid">
-        {mockBooks.map((book: Book) => (
-          <Card key={book.id} book={book} />
+        {mockBooks.map((book: Book, index) => (
+          <Card key={book.id} book={book} index={index} />
         ))}
       </div>
     </div>
