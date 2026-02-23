@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { saveUser, getUserByEmail } from '../../servise/localStorageHelper';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { getUserByEmail, saveUser } from '../../servise/localStorageHelper';
 import type { User } from '../../types';
 import './style.css';
 
@@ -9,12 +9,12 @@ export default function Registration() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 
@@ -48,46 +48,49 @@ export default function Registration() {
   return (
     <div className="registration-page">
       <div className="registration-container">
-        <h2>Register</h2>
-        {error && <div className="error-message">{error}</div>}
+        <h2>Registration</h2>
+        {error ? <div className="error-message">{error}</div> : null}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
-              type="text"
               id="name"
               name="name"
+              type="text"
               value={formData.name}
               onChange={handleChange}
               placeholder="Your name"
+              required
             />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
-              type="email"
               id="email"
               name="email"
+              type="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="your@email.com"
+              required
             />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
-              type="password"
               id="password"
               name="password"
+              type="password"
               value={formData.password}
               onChange={handleChange}
               placeholder="Your password"
+              required
             />
           </div>
           <button type="submit" className="submit-btn">Register</button>
         </form>
         <p className="login-link">
-          Already have an account? <Link to="/login">Login here</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
