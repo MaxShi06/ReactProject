@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Cart from './pages/Сart';
 import Books from './pages/First';
+import Products from './pages/Products';
 import Login from './pages/Login';
 import Registration from './pages/Registraion';
 import { isLoggedIn } from './servise/localStorageHelper';
@@ -43,6 +44,14 @@ export default function App() {
             )}
           />
           <Route
+            path="/products"
+            element={(
+              <ProtectedRoute>
+                <Products />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
             path="/cart"
             element={(
               <ProtectedRoute>
@@ -56,3 +65,5 @@ export default function App() {
     </Provider>
   );
 }
+
+

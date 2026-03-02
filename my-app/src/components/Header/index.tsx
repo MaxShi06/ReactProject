@@ -29,6 +29,7 @@ export default function Header() {
             <>
               <span className="user-name">Welcome, {currentUser.name}</span>
               <Link to="/books" className="nav-link">Books</Link>
+              <Link to="/products" className="nav-link">Products</Link>
               <Link to="/cart" className="nav-link nav-cart">Cart <span>{cartCount}</span></Link>
               <button onClick={handleLogout} className="logout-btn" type="button">Logout</button>
             </>
