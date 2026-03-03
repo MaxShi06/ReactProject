@@ -3,6 +3,7 @@ import { addToCart } from '../../store/cartSlice';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import './style.css';
 
+
 interface CardProps {
   book: Book;
   index: number;

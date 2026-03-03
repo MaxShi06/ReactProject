@@ -59,6 +59,32 @@
   font-weight: 700;
 }
 
+.product-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.product-card__button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1f5eff, #0ea5e9);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.product-card__button:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.1);
+}
+
+.product-card__button--danger {
+  background: linear-gradient(135deg, #d11f1f, #ef4444);
+}
+
 @keyframes product-card-appear {
   from {
     opacity: 0;

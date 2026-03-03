@@ -8,6 +8,14 @@
   animation: products-page-fade-in 350ms ease;
 }
 
+.products-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .products-page__title {
   margin: 0;
   font-size: 24px;
